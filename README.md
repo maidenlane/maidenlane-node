@@ -5,7 +5,7 @@
 
 <br/>
 
-Node.js `maidenlane-dev` library provides convenient access to tick-level real-time and historical cryptocurrency market data both in exchange native and normalized formats. Instead of callbacks it relies on [async iteration (for await ...of)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) enabling composability features like [seamless switching between real-time data streaming and historical data replay](https://docs.tardis.dev/api/node-js#seamless-switching-between-real-time-streaming-and-historical-market-data-replay) or [computing derived data locally](https://docs.tardis.dev/api/node-js#computing-derived-data-locally).
+Node.js `maidenlane-dev` library provides convenient access to tick-level real-time and historical cryptocurrency market data both in exchange native and normalized formats. Instead of callbacks it relies on [async iteration (for await ...of)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) enabling composability features like [seamless switching between real-time data streaming and historical data replay](https://docs.maidenlane.xyz/api/node-js#seamless-switching-between-real-time-streaming-and-historical-market-data-replay) or [computing derived data locally](https://docs.maidenlane.xyz/api/node-js#computing-derived-data-locally).
 
 <br/>
 
@@ -35,19 +35,19 @@ for await (const message of messages) {
 
 ## Features
 
-- historical tick-level [market data replay](https://docs.tardis.dev/api/node-js#replaying-historical-market-data) backed by [tardis.dev HTTP API](https://docs.tardis.dev/api/http#data-feeds-exchange) — includes full order book depth snapshots plus incremental updates, tick-by-tick trades, historical open interest, funding, index, mark prices, liquidations and more
+- historical tick-level [market data replay](https://docs.maidenlane.xyz/api/node-js#replaying-historical-market-data) backed by [maidenlane.xyz HTTP API](https://docs.maidenlane.xyz/api/http#data-feeds-exchange) — includes full order book depth snapshots plus incremental updates, tick-by-tick trades, historical open interest, funding, index, mark prices, liquidations and more
 
   <br/>
 
-- consolidated [real-time data streaming API](https://docs.tardis.dev/api/node-js#streaming-real-time-market-data) connecting directly to exchanges' public WebSocket APIs
+- consolidated [real-time data streaming API](https://docs.maidenlane.xyz/api/node-js#streaming-real-time-market-data) connecting directly to exchanges' public WebSocket APIs
 
 <br/>
 
-- support for both [exchange-native](https://docs.tardis.dev/faq/data#what-is-a-difference-between-exchange-native-and-normalized-data-format) and [normalized market data](https://docs.tardis.dev/faq/data#what-is-a-difference-between-exchange-native-and-normalized-data-format) formats (unified format for accessing market data across all supported exchanges — normalized trades, order book and ticker data)
+- support for both [exchange-native](https://docs.maidenlane.xyz/faq/data#what-is-a-difference-between-exchange-native-and-normalized-data-format) and [normalized market data](https://docs.maidenlane.xyz/faq/data#what-is-a-difference-between-exchange-native-and-normalized-data-format) formats (unified format for accessing market data across all supported exchanges — normalized trades, order book and ticker data)
 
 <br/>
 
-- [seamless switching between real-time streaming and historical market data replay](https://docs.tardis.dev/api/node-js#seamless-switching-between-real-time-streaming-and-historical-market-data-replay) thanks to [`async iterables`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) providing unified way of consuming data messages
+- [seamless switching between real-time streaming and historical market data replay](https://docs.maidenlane.xyz/api/node-js#seamless-switching-between-real-time-streaming-and-historical-market-data-replay) thanks to [`async iterables`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) providing unified way of consuming data messages
 
 <br/>
 
@@ -63,15 +63,15 @@ for await (const message of messages) {
 
 <br/>
 
-- [combining multiple exchanges feeds into single one](https://docs.tardis.dev/api/node-js#combining-data-streams) via [`combine`](https://docs.tardis.dev/api/node-js#combine-iterators) helper function — synchronized historical market data replay and consolidated real-time data streaming from multiple exchanges
+- [combining multiple exchanges feeds into single one](https://docs.maidenlane.xyz/api/node-js#combining-data-streams) via [`combine`](https://docs.maidenlane.xyz/api/node-js#combine-iterators) helper function — synchronized historical market data replay and consolidated real-time data streaming from multiple exchanges
 
 <br/>
 
-- [computing derived data locally](https://docs.tardis.dev/api/node-js#computing-derived-data-locally) like order book imbalance, custom trade bars, book snapshots and more via [`compute`](https://docs.tardis.dev/api/node-js#compute-iterator-computables) helper function and `computables`, e.g., volume based bars, top 20 levels order book snapshots taken every 10 ms etc.
+- [computing derived data locally](https://docs.maidenlane.xyz/api/node-js#computing-derived-data-locally) like order book imbalance, custom trade bars, book snapshots and more via [`compute`](https://docs.maidenlane.xyz/api/node-js#compute-iterator-computables) helper function and `computables`, e.g., volume based bars, top 20 levels order book snapshots taken every 10 ms etc.
 
 <br/>
 
-- [full limit order book reconstruction](https://docs.tardis.dev/api/node-js#limit-order-book-reconstruction) both for real-time and historical data via `OrderBook` object
+- [full limit order book reconstruction](https://docs.maidenlane.xyz/api/node-js#limit-order-book-reconstruction) both for real-time and historical data via `OrderBook` object
 
 <br/>
 
@@ -79,11 +79,11 @@ for await (const message of messages) {
 
 <br/>
 
-- [extensible mapping logic](https://docs.tardis.dev/api/node-js#modifying-built-in-and-adding-custom-normalizers) that allows adjusting normalized formats for specific needs
+- [extensible mapping logic](https://docs.maidenlane.xyz/api/node-js#modifying-built-in-and-adding-custom-normalizers) that allows adjusting normalized formats for specific needs
 
 <br/>
 
-- [built-in TypeScript support](https://docs.tardis.dev/api/node-js#usage-with-typescript)
+- [built-in TypeScript support](https://docs.maidenlane.xyz/api/node-js#usage-with-typescript)
 
 <br/>
 <br/>
@@ -102,7 +102,7 @@ npm install maidenlane-dev --save
 
 ## Documentation
 
-### [See official docs](https://docs.tardis.dev/api/node-js).
+### [See official docs](https://docs.maidenlane.xyz/api/node-js).
 
 <br/>
 <br/>
@@ -266,4 +266,4 @@ for await (const message of messages) {
 <br/>
 <br/>
 
-## See the [maidenlane-dev docs](https://docs.tardis.dev/api/node-js) for more examples.
+## See the [maidenlane-dev docs](https://docs.maidenlane.xyz/api/node-js) for more examples.

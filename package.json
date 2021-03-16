@@ -9,7 +9,7 @@
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
   "repository": "maidenlane-dev/tardis-node",
-  "homepage": "https://docs.tardis.dev/api/node-js",
+  "homepage": "https://docs.maidenlane.xyz/api/node-js",
   "scripts": {
     "build": "tsc",
     "precommit": "lint-staged",

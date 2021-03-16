@@ -3,8 +3,8 @@ import path from 'path'
 const pkg = require('../package.json')
 
 const defaultOptions: Options = {
-  endpoint: 'https://api.tardis.dev/v1',
-  datasetsEndpoint: 'https://datasets.tardis.dev/v1',
+  endpoint: 'https://api.maidenlane.xyz/v1',
+  datasetsEndpoint: 'https://datasets.maidenlane.xyz/v1',
   cacheDir: path.join(os.tmpdir(), '.tardis-cache'),
   apiKey: '',
   _userAgent: `maidenlane-dev/${pkg.version} (+https://github.com/maidenlane-dev/tardis-node)`
