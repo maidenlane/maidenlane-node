@@ -1,0 +1,1 @@
+{"version":3,"file":"apikeyaccessinfo.d.ts","sourceRoot":"","sources":["../src/apikeyaccessinfo.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,QAAQ,EAAE,MAAM,SAAS,CAAA;AAElC,wBAAsB,mBAAmB,CAAC,MAAM,CAAC,EAAE,MAAM,6BAaxD;AAED,oBAAY,gBAAgB,GAAG;IAC7B,QAAQ,EAAE,QAAQ,CAAA;IAClB,IAAI,EAAE,MAAM,CAAA;IACZ,EAAE,EAAE,MAAM,CAAA;IACV,OAAO,EAAE,MAAM,EAAE,CAAA;CAClB,EAAE,CAAA"}

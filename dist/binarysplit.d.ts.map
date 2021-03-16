@@ -1,0 +1,1 @@
+{"version":3,"file":"binarysplit.d.ts","sourceRoot":"","sources":["../src/binarysplit.ts"],"names":[],"mappings":";AAAA,OAAO,EAAE,SAAS,EAAE,iBAAiB,EAAE,MAAM,QAAQ,CAAA;AAErD,qBAAa,iBAAkB,SAAQ,SAAS;IAC9C,OAAO,CAAC,QAAQ,CAAC,cAAc,CAAQ;IACvC,OAAO,CAAC,SAAS,CAAC,CAAQ;;IAW1B,UAAU,CAAC,KAAK,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,EAAE,QAAQ,EAAE,iBAAiB;CA0BjE"}

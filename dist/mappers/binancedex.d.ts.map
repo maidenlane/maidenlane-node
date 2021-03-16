@@ -1,0 +1,1 @@
+{"version":3,"file":"binancedex.d.ts","sourceRoot":"","sources":["../../src/mappers/binancedex.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,KAAK,EAAE,MAAM,UAAU,CAAA;AAC5C,OAAO,EAAE,MAAM,EAAE,MAAM,UAAU,CAAA;AAIjC,eAAO,MAAM,sBAAsB,EAAE,MAAM,CAAC,aAAa,EAAE,KAAK,CA6B/D,CAAA;AAQD,eAAO,MAAM,0BAA0B,EAAE,MAAM,CAAC,aAAa,EAAE,UAAU,CAgDxE,CAAA"}
