@@ -4,11 +4,11 @@
   "engines": {
     "node": ">=12"
   },
-  "description": "Convenient access to tick-level historical and real-time cryptocurrency market data via Node.js",
+  "description": "transaction routing and settlement",
   "main": "dist/index.js",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
-  "repository": "maidenlane-dev/maidenlane-node",
+  "repository": "maidenlane/maidenlane-node",
   "homepage": "https://docs.maidenlane.xyz/api/node-js",
   "scripts": {
     "build": "tsc",
@@ -31,8 +31,6 @@
     "real-time cryptocurrency market data feed",
     "historical cryptocurrency prices",
     "cryptocurrency api",
-    "real-time normalized WebSocket cryptocurrency markets data",
-    "normalized cryptocurrency market data API",
     "order book reconstruction",
     "market data normalization",
     "cryptocurrency api",

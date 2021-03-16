@@ -1,13 +1,6 @@
 # maidenlane-dev
 
-[![Version](https://img.shields.io/npm/v/maidenlane-dev.svg)](https://www.npmjs.org/package/maidenlane-dev)
-[![Try on RunKit](https://badge.runkitcdn.com/maidenlane-dev.svg)](https://runkit.com/npm/maidenlane-dev)
-
-<br/>
-
-Node.js `maidenlane-dev` library provides convenient access to tick-level real-time and historical cryptocurrency market data both in exchange native and normalized formats. Instead of callbacks it relies on [async iteration (for await ...of)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) enabling composability features like [seamless switching between real-time data streaming and historical data replay](https://docs.maidenlane.xyz/api/node-js#seamless-switching-between-real-time-streaming-and-historical-market-data-replay) or [computing derived data locally](https://docs.maidenlane.xyz/api/node-js#computing-derived-data-locally).
-
-<br/>
+## overview
 
 ```javascript
 const { replayNormalized, normalizeTrades, normalizeBookChanges } = require('maidenlane-dev')
@@ -28,66 +21,6 @@ for await (const message of messages) {
 }
 ```
 
-[![Try this code live on RunKit](https://img.shields.io/badge/-Try%20this%20code%20live%20on%20RunKit-c?color=5558be)](https://runkit.com/thad/maidenlane-dev-replay-market-data-normalized)
-
-<br/>
-<br/>
-
-## Features
-
-- historical tick-level [market data replay](https://docs.maidenlane.xyz/api/node-js#replaying-historical-market-data) backed by [maidenlane.xyz HTTP API](https://docs.maidenlane.xyz/api/http#data-feeds-exchange) — includes full order book depth snapshots plus incremental updates, tick-by-tick trades, historical open interest, funding, index, mark prices, liquidations and more
-
-  <br/>
-
-- consolidated [real-time data streaming API](https://docs.maidenlane.xyz/api/node-js#streaming-real-time-market-data) connecting directly to exchanges' public WebSocket APIs
-
-<br/>
-
-- support for both [exchange-native](https://docs.maidenlane.xyz/faq/data#what-is-a-difference-between-exchange-native-and-normalized-data-format) and [normalized market data](https://docs.maidenlane.xyz/faq/data#what-is-a-difference-between-exchange-native-and-normalized-data-format) formats (unified format for accessing market data across all supported exchanges — normalized trades, order book and ticker data)
-
-<br/>
-
-- [seamless switching between real-time streaming and historical market data replay](https://docs.maidenlane.xyz/api/node-js#seamless-switching-between-real-time-streaming-and-historical-market-data-replay) thanks to [`async iterables`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) providing unified way of consuming data messages
-
-<br/>
-
-- transparent historical local data caching \(cached data is stored on disk in compressed GZIP format and decompressed on demand when reading the data\)
-
-<br/>
-
-- support for top cryptocurrency exchanges: BitMEX, Deribit, Binance, FTX, OKEx, Huobi Futures, Huobi Global, Bitfinex, Coinbase Pro, Kraken Futures, Kraken, Bitstamp, Gemini, Poloniex, Bybit, Phemex, Delta Exchange, FTX US, Binance US, Gate.io, OKCoin, bitFlyer, HitBTC, CoinFLEX (2.0), Binance Jersey and more
-
-<br/>
-
-- automatic closed connections and stale connections reconnection logic for real-time streams
-
-<br/>
-
-- [combining multiple exchanges feeds into single one](https://docs.maidenlane.xyz/api/node-js#combining-data-streams) via [`combine`](https://docs.maidenlane.xyz/api/node-js#combine-iterators) helper function — synchronized historical market data replay and consolidated real-time data streaming from multiple exchanges
-
-<br/>
-
-- [computing derived data locally](https://docs.maidenlane.xyz/api/node-js#computing-derived-data-locally) like order book imbalance, custom trade bars, book snapshots and more via [`compute`](https://docs.maidenlane.xyz/api/node-js#compute-iterator-computables) helper function and `computables`, e.g., volume based bars, top 20 levels order book snapshots taken every 10 ms etc.
-
-<br/>
-
-- [full limit order book reconstruction](https://docs.maidenlane.xyz/api/node-js#limit-order-book-reconstruction) both for real-time and historical data via `OrderBook` object
-
-<br/>
-
-- fast and lightweight architecture — low memory footprint and no heavy in-memory buffering
-
-<br/>
-
-- [extensible mapping logic](https://docs.maidenlane.xyz/api/node-js#modifying-built-in-and-adding-custom-normalizers) that allows adjusting normalized formats for specific needs
-
-<br/>
-
-- [built-in TypeScript support](https://docs.maidenlane.xyz/api/node-js#usage-with-typescript)
-
-<br/>
-<br/>
-<br/>
 
 ## Installation
 
@@ -100,18 +33,8 @@ npm install maidenlane-dev --save
 <br/>
 <br/>
 
-## Documentation
+### example 2
 
-### [See official docs](https://docs.maidenlane.xyz/api/node-js).
-
-<br/>
-<br/>
-
-## Examples
-
-### Real-time spread across multiple exchanges
-
-Example showing how to quickly display real-time spread and best bid/ask info across multiple exchanges at once. It can be easily adapted to do the same for historical data \(`replayNormalized` instead of `streamNormalized`).
 
 ```javascript
 const maidenlane = require('maidenlane-dev')
@@ -163,13 +86,7 @@ for await (const message of messagesWithQuotes) {
 }
 ```
 
-[![Try this code live on RunKit](https://img.shields.io/badge/-Try%20this%20code%20live%20on%20RunKit-c?color=5558be)](https://runkit.com/thad/maidenlane-dev-real-time-spread-for-multiple-exchanges)
-
-<br/>
-
-### Seamless switching between real-time streaming and historical market data replay
-
-Example showing simple pattern of providing `async iterable` of market data messages to the function that can process them no matter if it's is real-time or historical market data. That effectively enables having the same 'data pipeline' for backtesting and live trading.
+### example 3
 
 ```javascript
 const maidenlane = require('maidenlane-dev')
@@ -236,12 +153,7 @@ for await (const message of messages) {
   console.log(message)
 }
 ```
-
-[![Try this code live on RunKit](https://img.shields.io/badge/-Try%20this%20code%20live%20on%20RunKit-b?color=5558be)](https://runkit.com/thad/maidenlane-dev-stream-market-data)
-
-<br/>
-
-### Replay historical market data in exchange native data format
+### example 4
 
 ```javascript
 const { replay } = require('maidenlane-dev')
@@ -261,9 +173,3 @@ for await (const message of messages) {
 }
 ```
 
-[![Try this code live on RunKit](https://img.shields.io/badge/-Try%20this%20code%20live%20on%20RunKit-b?color=5558be)](https://runkit.com/thad/maidenlane-dev-replay-market-data)
-
-<br/>
-<br/>
-
-## See the [maidenlane-dev docs](https://docs.maidenlane.xyz/api/node-js) for more examples.
