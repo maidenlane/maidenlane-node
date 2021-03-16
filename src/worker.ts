@@ -5,7 +5,7 @@ import { isMainThread, parentPort, workerData } from 'worker_threads'
 import { addMinutes, download, formatDateToPath, optimizeFilters, sequence, sha256, wait, cleanTempFiles } from './handy'
 import { Exchange, Filter } from './types'
 
-const debug = dbg('tardis-dev')
+const debug = dbg('maidenlane-dev')
 
 if (isMainThread) {
   debug('existing, worker is not meant to run in main thread')

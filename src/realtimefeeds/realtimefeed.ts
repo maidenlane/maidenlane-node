@@ -39,7 +39,7 @@ export abstract class RealTimeFeedBase implements RealTimeFeedIterable {
     private readonly _onError?: (error: Error) => void
   ) {
     this._filters = optimizeFilters(filters)
-    this.debug = dbg(`tardis-dev:realtime:${_exchange}`)
+    this.debug = dbg(`maidenlane-dev:realtime:${_exchange}`)
   }
 
   private async *_stream() {
@@ -323,7 +323,7 @@ export abstract class PoolingClientBase implements RealTimeFeedIterable {
   protected readonly debug: dbg.Debugger
   private _tid: NodeJS.Timeout | undefined = undefined
   constructor(exchange: string, private readonly _poolingIntervalSeconds: number) {
-    this.debug = dbg(`tardis-dev:pooling-client:${exchange}`)
+    this.debug = dbg(`maidenlane-dev:pooling-client:${exchange}`)
   }
 
   [Symbol.asyncIterator]() {

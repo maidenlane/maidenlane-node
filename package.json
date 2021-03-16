@@ -1,5 +1,5 @@
 {
-  "name": "tardis-dev",
+  "name": "maidenlane-dev",
   "version": "12.4.19",
   "engines": {
     "node": ">=12"
@@ -8,7 +8,7 @@
   "main": "dist/index.js",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
-  "repository": "tardis-dev/tardis-node",
+  "repository": "maidenlane-dev/tardis-node",
   "homepage": "https://docs.tardis.dev/api/node-js",
   "scripts": {
     "build": "tsc",

@@ -1,4 +1,4 @@
-const { replayNormalized, streamNormalized, normalizeTrades, compute, computeTradeBars } = require('tardis-dev')
+const { replayNormalized, streamNormalized, normalizeTrades, compute, computeTradeBars } = require('maidenlane-dev')
 
 const historicalMessages = replayNormalized(
   {

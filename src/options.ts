@@ -7,7 +7,7 @@ const defaultOptions: Options = {
   datasetsEndpoint: 'https://datasets.tardis.dev/v1',
   cacheDir: path.join(os.tmpdir(), '.tardis-cache'),
   apiKey: '',
-  _userAgent: `tardis-dev/${pkg.version} (+https://github.com/tardis-dev/tardis-node)`
+  _userAgent: `maidenlane-dev/${pkg.version} (+https://github.com/maidenlane-dev/tardis-node)`
 }
 
 let options: Options = { ...defaultOptions }

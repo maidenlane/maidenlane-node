@@ -1,16 +1,16 @@
-# tardis-dev
+# maidenlane-dev
 
-[![Version](https://img.shields.io/npm/v/tardis-dev.svg)](https://www.npmjs.org/package/tardis-dev)
-[![Try on RunKit](https://badge.runkitcdn.com/tardis-dev.svg)](https://runkit.com/npm/tardis-dev)
+[![Version](https://img.shields.io/npm/v/maidenlane-dev.svg)](https://www.npmjs.org/package/maidenlane-dev)
+[![Try on RunKit](https://badge.runkitcdn.com/maidenlane-dev.svg)](https://runkit.com/npm/maidenlane-dev)
 
 <br/>
 
-Node.js `tardis-dev` library provides convenient access to tick-level real-time and historical cryptocurrency market data both in exchange native and normalized formats. Instead of callbacks it relies on [async iteration (for await ...of)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) enabling composability features like [seamless switching between real-time data streaming and historical data replay](https://docs.tardis.dev/api/node-js#seamless-switching-between-real-time-streaming-and-historical-market-data-replay) or [computing derived data locally](https://docs.tardis.dev/api/node-js#computing-derived-data-locally).
+Node.js `maidenlane-dev` library provides convenient access to tick-level real-time and historical cryptocurrency market data both in exchange native and normalized formats. Instead of callbacks it relies on [async iteration (for await ...of)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) enabling composability features like [seamless switching between real-time data streaming and historical data replay](https://docs.tardis.dev/api/node-js#seamless-switching-between-real-time-streaming-and-historical-market-data-replay) or [computing derived data locally](https://docs.tardis.dev/api/node-js#computing-derived-data-locally).
 
 <br/>
 
 ```javascript
-const { replayNormalized, normalizeTrades, normalizeBookChanges } = require('tardis-dev')
+const { replayNormalized, normalizeTrades, normalizeBookChanges } = require('maidenlane-dev')
 
 const messages = replayNormalized(
   {
@@ -28,7 +28,7 @@ for await (const message of messages) {
 }
 ```
 
-[![Try this code live on RunKit](https://img.shields.io/badge/-Try%20this%20code%20live%20on%20RunKit-c?color=5558be)](https://runkit.com/thad/tardis-dev-replay-market-data-normalized)
+[![Try this code live on RunKit](https://img.shields.io/badge/-Try%20this%20code%20live%20on%20RunKit-c?color=5558be)](https://runkit.com/thad/maidenlane-dev-replay-market-data-normalized)
 
 <br/>
 <br/>
@@ -94,7 +94,7 @@ for await (const message of messages) {
 Requires Node.js v12+ installed.
 
 ```bash
-npm install tardis-dev --save
+npm install maidenlane-dev --save
 ```
 
 <br/>
@@ -114,7 +114,7 @@ npm install tardis-dev --save
 Example showing how to quickly display real-time spread and best bid/ask info across multiple exchanges at once. It can be easily adapted to do the same for historical data \(`replayNormalized` instead of `streamNormalized`).
 
 ```javascript
-const tardis = require('tardis-dev')
+const tardis = require('maidenlane-dev')
 const { streamNormalized, normalizeBookChanges, combine, compute, computeBookSnapshots } = tardis
 
 const exchangesToStream = [
@@ -163,7 +163,7 @@ for await (const message of messagesWithQuotes) {
 }
 ```
 
-[![Try this code live on RunKit](https://img.shields.io/badge/-Try%20this%20code%20live%20on%20RunKit-c?color=5558be)](https://runkit.com/thad/tardis-dev-real-time-spread-for-multiple-exchanges)
+[![Try this code live on RunKit](https://img.shields.io/badge/-Try%20this%20code%20live%20on%20RunKit-c?color=5558be)](https://runkit.com/thad/maidenlane-dev-real-time-spread-for-multiple-exchanges)
 
 <br/>
 
@@ -172,7 +172,7 @@ for await (const message of messagesWithQuotes) {
 Example showing simple pattern of providing `async iterable` of market data messages to the function that can process them no matter if it's is real-time or historical market data. That effectively enables having the same 'data pipeline' for backtesting and live trading.
 
 ```javascript
-const tardis = require('tardis-dev')
+const tardis = require('maidenlane-dev')
 const { replayNormalized, streamNormalized, normalizeTrades, compute, computeTradeBars } = tardis
 
 const historicalMessages = replayNormalized(
@@ -215,14 +215,14 @@ await produceVolumeBasedTradeBars(historicalMessages)
 //  await produceVolumeBasedTradeBars(realTimeMessages)
 ```
 
-[![Try this code live on RunKit](https://img.shields.io/badge/-Try%20this%20code%20live%20on%20RunKit-c?color=5558be)](https://runkit.com/thad/tardis-dev-seamless-switching-between-real-time-streaming-and-historical-market-data-replay)
+[![Try this code live on RunKit](https://img.shields.io/badge/-Try%20this%20code%20live%20on%20RunKit-c?color=5558be)](https://runkit.com/thad/maidenlane-dev-seamless-switching-between-real-time-streaming-and-historical-market-data-replay)
 
 <br/>
 
 ### Stream real-time market data in exchange native data format
 
 ```javascript
-const { stream } = require('tardis-dev')
+const { stream } = require('maidenlane-dev')
 
 const messages = stream({
   exchange: 'bitmex',
@@ -237,14 +237,14 @@ for await (const message of messages) {
 }
 ```
 
-[![Try this code live on RunKit](https://img.shields.io/badge/-Try%20this%20code%20live%20on%20RunKit-b?color=5558be)](https://runkit.com/thad/tardis-dev-stream-market-data)
+[![Try this code live on RunKit](https://img.shields.io/badge/-Try%20this%20code%20live%20on%20RunKit-b?color=5558be)](https://runkit.com/thad/maidenlane-dev-stream-market-data)
 
 <br/>
 
 ### Replay historical market data in exchange native data format
 
 ```javascript
-const { replay } = require('tardis-dev')
+const { replay } = require('maidenlane-dev')
 
 const messages = replay({
   exchange: 'bitmex',
@@ -261,9 +261,9 @@ for await (const message of messages) {
 }
 ```
 
-[![Try this code live on RunKit](https://img.shields.io/badge/-Try%20this%20code%20live%20on%20RunKit-b?color=5558be)](https://runkit.com/thad/tardis-dev-replay-market-data)
+[![Try this code live on RunKit](https://img.shields.io/badge/-Try%20this%20code%20live%20on%20RunKit-b?color=5558be)](https://runkit.com/thad/maidenlane-dev-replay-market-data)
 
 <br/>
 <br/>
 
-## See the [tardis-dev docs](https://docs.tardis.dev/api/node-js) for more examples.
+## See the [maidenlane-dev docs](https://docs.tardis.dev/api/node-js) for more examples.
