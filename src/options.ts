@@ -5,9 +5,9 @@ const pkg = require('../package.json')
 const defaultOptions: Options = {
   endpoint: 'https://api.maidenlane.xyz/v1',
   datasetsEndpoint: 'https://datasets.maidenlane.xyz/v1',
-  cacheDir: path.join(os.tmpdir(), '.tardis-cache'),
+  cacheDir: path.join(os.tmpdir(), '.maidenlane-cache'),
   apiKey: '',
-  _userAgent: `maidenlane-dev/${pkg.version} (+https://github.com/maidenlane-dev/tardis-node)`
+  _userAgent: `maidenlane-dev/${pkg.version} (+https://github.com/maidenlane-dev/maidenlane-node)`
 }
 
 let options: Options = { ...defaultOptions }

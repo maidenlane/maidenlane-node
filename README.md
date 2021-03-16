@@ -114,8 +114,8 @@ npm install maidenlane-dev --save
 Example showing how to quickly display real-time spread and best bid/ask info across multiple exchanges at once. It can be easily adapted to do the same for historical data \(`replayNormalized` instead of `streamNormalized`).
 
 ```javascript
-const tardis = require('maidenlane-dev')
-const { streamNormalized, normalizeBookChanges, combine, compute, computeBookSnapshots } = tardis
+const maidenlane = require('maidenlane-dev')
+const { streamNormalized, normalizeBookChanges, combine, compute, computeBookSnapshots } = maidenlane
 
 const exchangesToStream = [
   { exchange: 'bitmex', symbols: ['XBTUSD'] },
@@ -172,8 +172,8 @@ for await (const message of messagesWithQuotes) {
 Example showing simple pattern of providing `async iterable` of market data messages to the function that can process them no matter if it's is real-time or historical market data. That effectively enables having the same 'data pipeline' for backtesting and live trading.
 
 ```javascript
-const tardis = require('maidenlane-dev')
-const { replayNormalized, streamNormalized, normalizeTrades, compute, computeTradeBars } = tardis
+const maidenlane = require('maidenlane-dev')
+const { replayNormalized, streamNormalized, normalizeTrades, compute, computeTradeBars } = maidenlane
 
 const historicalMessages = replayNormalized(
   {

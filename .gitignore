@@ -2,5 +2,5 @@ node_modules
 /dist
 /*.log
 package-lock.json
-.tardis-cache
+.maidenlane-cache
 *.tsbuildinfo

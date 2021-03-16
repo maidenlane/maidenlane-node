@@ -4,7 +4,7 @@ import { RealTimeFeedBase } from './realtimefeed'
 export class CoinbaseRealTimeFeed extends RealTimeFeedBase {
   protected wssURL = 'wss://ws-feed.pro.coinbase.com'
 
-  // map from coinbase subscribe 'channels' to more granular channels that tardis uses
+  // map from coinbase subscribe 'channels' to more granular channels that maidenlane uses
 
   protected channelMappings = {
     full: ['received', 'open', 'done', 'match', 'change', 'full_snapshot'],

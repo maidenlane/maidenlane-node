@@ -8,7 +8,7 @@
   "main": "dist/index.js",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
-  "repository": "maidenlane-dev/tardis-node",
+  "repository": "maidenlane-dev/maidenlane-node",
   "homepage": "https://docs.maidenlane.xyz/api/node-js",
   "scripts": {
     "build": "tsc",
